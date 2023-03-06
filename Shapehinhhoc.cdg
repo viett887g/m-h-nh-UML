@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Shapehinhhoc">
+  <ClassDiagramComponents>
+    <Class name="Khuvuc" package="" visibility="public" xPosition="82.0" yPosition="-23.0">
+      <Fields>
+        <Field name="Makhuvuc" type="String" visibility="private"/>
+        <Field name="Tenkhuvuc" type="String" visibility="private"/>
+        <Field name="Trangthai" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Khuvuc" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Luongnhanvien" package="" visibility="public" xPosition="525.0" yPosition="384.0">
+      <Fields>
+        <Field name="Tongsocalam" type="int" visibility="private"/>
+        <Field name="Thanhtien" type="int" visibility="private"/>
+        <Field name="Kyluong" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Luongnhanvien" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HangHoa" package="" visibility="public" xPosition="499.0" yPosition="205.0">
+      <Fields>
+        <Field name="hangHoa" type="String" visibility="private"/>
+        <Field name="SoLuong" type="int" visibility="private"/>
+        <Field name="Hinhanh" type="String" visibility="private"/>
+        <Field name="GiaSanPham" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="hanghoa" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Chitietbanhang" package="" visibility="public" xPosition="281.0" yPosition="253.0">
+      <Fields>
+        <Field name="soluong" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="chitietbanhang" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Nhanvien" package="" visibility="public" xPosition="293.0" yPosition="408.0">
+      <Fields>
+        <Field name="TenNv" type="String" visibility="private"/>
+        <Field name="MaNv" type="String" visibility="private"/>
+        <Field name="Sdt" type="int" visibility="private"/>
+        <Field name="Diachi" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Nhanvien" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Calamviec" package="" visibility="public" xPosition="728.0" yPosition="215.0">
+      <Fields>
+        <Field name="Macalamviec" type="String" visibility="private"/>
+        <Field name="Tencalamviec" type="String" visibility="private"/>
+        <Field name="Giobatdau" type="Date" visibility="private"/>
+        <Field name="Gioketthuc" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hoadonbanhang" package="" visibility="public" xPosition="65.0" yPosition="345.0">
+      <Fields>
+        <Field name="NgayHDBH" type="Date" visibility="private"/>
+        <Field name="Tongtien" type="int" visibility="private"/>
+        <Field name="Giamgia" type="int" visibility="private"/>
+        <Field name="Chiphikhac" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Hoadonbanhang" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Khachhang" package="" visibility="public" xPosition="65.0" yPosition="597.0">
+      <Fields>
+        <Field name="Makhachhang" type="String" visibility="private"/>
+        <Field name="Tenkhachhang" type="String" visibility="private"/>
+        <Field name="Diachi" type="String" visibility="private"/>
+        <Field name="Sdt" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="khachhang" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Loaikhachhang" package="" visibility="public" xPosition="293.0" yPosition="607.0">
+      <Fields>
+        <Field name="Malkhachhang" type="String" visibility="private"/>
+        <Field name="Tenlkhachhang" type="String" visibility="private"/>
+        <Field name="Giamgia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="loaikhachhang" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ban" package="" visibility="public" xPosition="69.0" yPosition="152.0">
+      <Fields>
+        <Field name="Maban" type="String" visibility="private"/>
+        <Field name="Tenban" type="String" visibility="private"/>
+        <Field name="Thuoctinh" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Ban" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="Nhanvien" target="Luongnhanvien" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="banhang" source="Chitietbanhang" target="Hoadonbanhang" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Loaikhachhang" target="Khachhang"/>
+    <HasRelation name="luong" source="Calamviec" target="Luongnhanvien" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="hang" source="HangHoa" target="Chitietbanhang" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Khachhang" target="Hoadonbanhang"/>
+    <IsRelation name="is" source="Khuvuc" target="Ban"/>
+    <HasRelation name="luong" source="Nhanvien" target="Luongnhanvien" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Ban" target="Hoadonbanhang"/>
+    <HasRelation name="nhan" source="Nhanvien" target="Hoadonbanhang" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
